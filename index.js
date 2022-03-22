@@ -33,6 +33,8 @@ console.log(final2014[0]['Away Team Goals']);
 
 console.log(final2014[0]['Win conditions']);
 
+
+
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Use getFinals to do the following:
 1. Receive an array as a parameter that will take the fifa data as its argument
@@ -41,11 +43,14 @@ Use getFinals to do the following:
 💡 HINT - you should be looking at the stage key inside of the objects
 */
 
-function getFinals(/* code here */) {
-    /* code here */
+function getFinals(arrayToCheck) {
+    const finals = arrayToCheck.filter(function(item) {
+        return item.Stage === 'Final';
+    })
+    return finals
  }
 
-
+console.log(getFinals(fifaData));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Use the higher-order function called getYears to do the following: 
