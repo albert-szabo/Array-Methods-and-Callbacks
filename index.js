@@ -33,8 +33,6 @@ console.log(final2014[0]['Away Team Goals']);
 
 console.log(final2014[0]['Win conditions']);
 
-
-
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Use getFinals to do the following:
 1. Receive an array as a parameter that will take the fifa data as its argument
@@ -59,7 +57,8 @@ Use the higher-order function called getYears to do the following:
 3. Return an array called years containing all of the years in the getFinals data set*/
 
 function getYears(arrayToExamine, functionCB) {
-    return functionCB(arrayToExamine).map(item => item.Year);
+    const years = functionCB(arrayToExamine).map(item => item.Year);
+    return years;
 }
 
 console.log(getYears(fifaData, getFinals));
@@ -72,11 +71,12 @@ Use the higher-order function getWinners to do the following:
 💡 HINT: Don't worry about ties for now (Please see the README file for info on ties for a stretch goal.)
 4. Returns the names of all winning countries in an array called `winners` */ 
 
-function getWinners(/* code here */) {
-    /* code here */
+function getWinners(array, functionCB2) {
+    const winners = functionCB2(array).map(item => item['Home Team Goals'] > item['Away Team Goals'] ? item['Home Team Name'] : item['Away Team Name']);
+    return winners;
 }
 
-
+console.log(getWinners(fifaData, getFinals));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Use the higher-order function getWinnersByYear to do the following:
